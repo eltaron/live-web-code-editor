@@ -6,9 +6,10 @@ function showPreview(){
     var htmlCode = document.getElementById("htmlCode").value;
     var cssCode = ""+document.getElementById("cssCode").value+"";
     var jsCode = ""+document.getElementById("jsCode").value+"";
+    localStorage.setItem('all',htmlCode+cssCode+jsCode);
     var frame = document.getElementById("preview-window").contentWindow.document;
     frame.open();
-    frame.write(htmlCode+cssCode+jsCode);
+    frame.write(localStorage.getItem('all'));
     frame.close();
 }
 
